@@ -1,0 +1,225 @@
+tiempo: Fri Jan 25 06:02:09 2019 806193; archivo: function_hdu.c; funcion: primos_caca_criba; linea 552; nivel: 4 caca 8====D primos asta 22
+tiempo: Fri Jan 25 06:02:09 2019 806350; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 2 -1
+tiempo: Fri Jan 25 06:02:09 2019 806374; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 4 0
+tiempo: Fri Jan 25 06:02:09 2019 806393; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 3 -1
+tiempo: Fri Jan 25 06:02:09 2019 806412; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 6 de 3 1
+tiempo: Fri Jan 25 06:02:09 2019 806430; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 9 0
+tiempo: Fri Jan 25 06:02:09 2019 806448; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 8 0
+tiempo: Fri Jan 25 06:02:09 2019 806465; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 5 -1
+tiempo: Fri Jan 25 06:02:09 2019 806482; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 10 de 5 1
+tiempo: Fri Jan 25 06:02:09 2019 806500; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 15 de 5 1
+tiempo: Fri Jan 25 06:02:09 2019 806517; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 12 0
+tiempo: Fri Jan 25 06:02:09 2019 806535; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 7 -1
+tiempo: Fri Jan 25 06:02:09 2019 806552; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 14 de 7 1
+tiempo: Fri Jan 25 06:02:09 2019 806570; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 21 de 7 1
+tiempo: Fri Jan 25 06:02:09 2019 806587; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 16 0
+tiempo: Fri Jan 25 06:02:09 2019 806604; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 18 de 9 0
+tiempo: Fri Jan 25 06:02:09 2019 806622; archivo: function_hdu.c; funcion: morbius_divisible_encontrado_cb; linea 601; nivel: 5 caca 8====D divisible 20 0
+tiempo: Fri Jan 25 06:02:09 2019 806639; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 11 -1
+tiempo: Fri Jan 25 06:02:09 2019 806656; archivo: function_hdu.c; funcion: morbius_no_divisible_encontrado_cb; linea 609; nivel: 5 caca 8====D indivisible 22 de 11 1
+tiempo: Fri Jan 25 06:02:09 2019 806674; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 13 -1
+tiempo: Fri Jan 25 06:02:09 2019 806691; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 17 -1
+tiempo: Fri Jan 25 06:02:09 2019 806708; archivo: function_hdu.c; funcion: morbius_primo_encontrado_cb; linea 615; nivel: 5 caca 8====D primo enc 19 -1
+tiempo: Fri Jan 25 06:02:09 2019 806726; archivo: function_hdu.c; funcion: primos_caca_criba; linea 582; nivel: 4 caca 8====D generados 8 primos
+tiempo: Fri Jan 25 06:02:09 2019 806749; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[101]=0
+tiempo: Fri Jan 25 06:02:09 2019 806767; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 47
+tiempo: Fri Jan 25 06:02:09 2019 806785; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[100]=1
+tiempo: Fri Jan 25 06:02:09 2019 806802; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 65
+tiempo: Fri Jan 25 06:02:09 2019 806838; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[99]=1
+tiempo: Fri Jan 25 06:02:09 2019 806856; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 101
+tiempo: Fri Jan 25 06:02:09 2019 806875; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[98]=1
+tiempo: Fri Jan 25 06:02:09 2019 806892; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 127
+tiempo: Fri Jan 25 06:02:09 2019 806910; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[97]=1
+tiempo: Fri Jan 25 06:02:09 2019 806928; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 155
+tiempo: Fri Jan 25 06:02:09 2019 806945; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[96]=2
+tiempo: Fri Jan 25 06:02:09 2019 806962; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 172
+tiempo: Fri Jan 25 06:02:09 2019 806981; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[95]=2
+tiempo: Fri Jan 25 06:02:09 2019 806998; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 216
+tiempo: Fri Jan 25 06:02:09 2019 807016; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[94]=1
+tiempo: Fri Jan 25 06:02:09 2019 807033; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 233
+tiempo: Fri Jan 25 06:02:09 2019 807051; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[93]=0
+tiempo: Fri Jan 25 06:02:09 2019 807068; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 261
+tiempo: Fri Jan 25 06:02:09 2019 807086; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[92]=-1
+tiempo: Fri Jan 25 06:02:09 2019 807103; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 287
+tiempo: Fri Jan 25 06:02:09 2019 807121; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[91]=-1
+tiempo: Fri Jan 25 06:02:09 2019 807139; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 315
+tiempo: Fri Jan 25 06:02:09 2019 807156; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[90]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807174; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 332
+tiempo: Fri Jan 25 06:02:09 2019 807192; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[89]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807209; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 367
+tiempo: Fri Jan 25 06:02:09 2019 807227; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[88]=-1
+tiempo: Fri Jan 25 06:02:09 2019 807244; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 383
+tiempo: Fri Jan 25 06:02:09 2019 807262; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[87]=-1
+tiempo: Fri Jan 25 06:02:09 2019 807280; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 410
+tiempo: Fri Jan 25 06:02:09 2019 807298; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[86]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807315; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 434
+tiempo: Fri Jan 25 06:02:09 2019 807333; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[85]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807350; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 461
+tiempo: Fri Jan 25 06:02:09 2019 807385; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[84]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807402; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 477
+tiempo: Fri Jan 25 06:02:09 2019 807421; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[83]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807438; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 511
+tiempo: Fri Jan 25 06:02:09 2019 807456; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[82]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807474; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 527
+tiempo: Fri Jan 25 06:02:09 2019 807492; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[81]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807509; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 553
+tiempo: Fri Jan 25 06:02:09 2019 807527; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[80]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807544; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 576
+tiempo: Fri Jan 25 06:02:09 2019 807562; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[79]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807579; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 601
+tiempo: Fri Jan 25 06:02:09 2019 807597; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[78]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807614; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 616
+tiempo: Fri Jan 25 06:02:09 2019 807632; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[77]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807649; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 641
+tiempo: Fri Jan 25 06:02:09 2019 807667; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[76]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807684; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 656
+tiempo: Fri Jan 25 06:02:09 2019 807702; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[75]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807719; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 681
+tiempo: Fri Jan 25 06:02:09 2019 807737; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[74]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807754; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 696
+tiempo: Fri Jan 25 06:02:09 2019 807772; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[73]=-4
+tiempo: Fri Jan 25 06:02:09 2019 807789; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 721
+tiempo: Fri Jan 25 06:02:09 2019 807807; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[72]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807824; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 736
+tiempo: Fri Jan 25 06:02:09 2019 807842; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[71]=-3
+tiempo: Fri Jan 25 06:02:09 2019 807860; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 759
+tiempo: Fri Jan 25 06:02:09 2019 807877; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[70]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807895; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 773
+tiempo: Fri Jan 25 06:02:09 2019 807913; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[69]=-1
+tiempo: Fri Jan 25 06:02:09 2019 807946; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 796
+tiempo: Fri Jan 25 06:02:09 2019 807964; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[68]=-2
+tiempo: Fri Jan 25 06:02:09 2019 807982; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 810
+tiempo: Fri Jan 25 06:02:09 2019 807999; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[67]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808017; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 824
+tiempo: Fri Jan 25 06:02:09 2019 808034; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[66]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808051; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 838
+tiempo: Fri Jan 25 06:02:09 2019 808069; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[65]=0
+tiempo: Fri Jan 25 06:02:09 2019 808086; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 852
+tiempo: Fri Jan 25 06:02:09 2019 808104; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[64]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808121; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 866
+tiempo: Fri Jan 25 06:02:09 2019 808139; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[63]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808156; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 879
+tiempo: Fri Jan 25 06:02:09 2019 808174; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[62]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808191; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 892
+tiempo: Fri Jan 25 06:02:09 2019 808209; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[61]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808226; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 905
+tiempo: Fri Jan 25 06:02:09 2019 808244; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[60]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808261; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 918
+tiempo: Fri Jan 25 06:02:09 2019 808279; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[59]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808296; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 931
+tiempo: Fri Jan 25 06:02:09 2019 808314; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[58]=0
+tiempo: Fri Jan 25 06:02:09 2019 808331; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 944
+tiempo: Fri Jan 25 06:02:09 2019 808349; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[57]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808366; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 957
+tiempo: Fri Jan 25 06:02:09 2019 808384; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[56]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808401; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 970
+tiempo: Fri Jan 25 06:02:09 2019 808419; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[55]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808436; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 982
+tiempo: Fri Jan 25 06:02:09 2019 808453; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[54]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808486; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 994
+tiempo: Fri Jan 25 06:02:09 2019 808504; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[53]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808522; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1006
+tiempo: Fri Jan 25 06:02:09 2019 808539; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[52]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808556; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1018
+tiempo: Fri Jan 25 06:02:09 2019 808574; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[51]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808591; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808609; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[50]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808626; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808643; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[49]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808661; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808678; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[48]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808695; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808712; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[47]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808729; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808747; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[46]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808764; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808791; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[45]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808809; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808827; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[44]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808844; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808861; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[43]=-3
+tiempo: Fri Jan 25 06:02:09 2019 808878; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808895; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[42]=-2
+tiempo: Fri Jan 25 06:02:09 2019 808913; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808930; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[41]=-1
+tiempo: Fri Jan 25 06:02:09 2019 808947; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808964; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[40]=0
+tiempo: Fri Jan 25 06:02:09 2019 808981; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 808998; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[39]=0
+tiempo: Fri Jan 25 06:02:09 2019 809031; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809049; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[38]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809066; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809083; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[37]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809100; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809117; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[36]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809134; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809160; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[35]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809178; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809195; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[34]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809225; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809242; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[33]=-3
+tiempo: Fri Jan 25 06:02:09 2019 809258; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809275; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[32]=-4
+tiempo: Fri Jan 25 06:02:09 2019 809291; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809308; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[31]=-4
+tiempo: Fri Jan 25 06:02:09 2019 809324; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809341; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[30]=-3
+tiempo: Fri Jan 25 06:02:09 2019 809357; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809374; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[29]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809390; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809407; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[28]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809423; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809440; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[27]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809456; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809472; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[26]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809489; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809505; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[25]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809522; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809538; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[24]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809570; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809587; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[23]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809603; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809620; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[22]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809636; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809653; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[21]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809669; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809685; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[20]=-3
+tiempo: Fri Jan 25 06:02:09 2019 809702; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809719; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[19]=-3
+tiempo: Fri Jan 25 06:02:09 2019 809735; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809751; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[18]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809768; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809784; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[17]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809800; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809817; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[16]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809833; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809849; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[15]=-1
+tiempo: Fri Jan 25 06:02:09 2019 809866; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809882; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[14]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809899; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809915; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[13]=-3
+tiempo: Fri Jan 25 06:02:09 2019 809932; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809948; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[12]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809965; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 809981; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[11]=-2
+tiempo: Fri Jan 25 06:02:09 2019 809998; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810014; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[10]=-1
+tiempo: Fri Jan 25 06:02:09 2019 810030; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810047; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[9]=-2
+tiempo: Fri Jan 25 06:02:09 2019 810079; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810096; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[8]=-2
+tiempo: Fri Jan 25 06:02:09 2019 810112; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810129; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[7]=-2
+tiempo: Fri Jan 25 06:02:09 2019 810145; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810162; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[6]=-1
+tiempo: Fri Jan 25 06:02:09 2019 810178; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810195; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[5]=-2
+tiempo: Fri Jan 25 06:02:09 2019 810211; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810228; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[4]=-1
+tiempo: Fri Jan 25 06:02:09 2019 810244; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810261; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[3]=-1
+tiempo: Fri Jan 25 06:02:09 2019 810277; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810293; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[2]=0
+tiempo: Fri Jan 25 06:02:09 2019 810310; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
+tiempo: Fri Jan 25 06:02:09 2019 810327; archivo: function_hdu.c; funcion: function_hdu_main; linea 756; nivel: 3 caca 8====D f[1]=1
+tiempo: Fri Jan 25 06:02:09 2019 810343; archivo: function_hdu.c; funcion: function_hdu_main; linea 757; nivel: 3 caca 8====D comple 1030
