@@ -526,12 +526,16 @@ CACA_COMUN_FUNC_STATICA natural caca_comun_encuentra_divisores(natural n,
 
 #if 1
 
-#define PRIMOS_NUM_MAX ((int)1E9)
+#define PRIMOS_NUM_MAX ((int)1E6)
+typedef struct primos_datos {
+	natural primos_caca_tam;
+	natural primos_caca[PRIMOS_NUM_MAX + 1];
+	bool primos_caca_es_primo[PRIMOS_NUM_MAX + 1];
+
+} primos_datos;
+
 //#define PRIMOS_NUM_MAX ((int)101)
 
-natural primos_caca[PRIMOS_NUM_MAX + 1] = { 0 };
-natural primos_caca_tam = 0;
-bool primos_caca_es_primo[PRIMOS_NUM_MAX + 1] = { 0 };
 typedef void (*primos_caca_primo_encontrado_cb)(natural primo,
 		natural idx_primo, void *cb_ctx);
 typedef void (*primos_caca_compuesto_encontrado_cb)(natural primo,
@@ -548,7 +552,9 @@ CACA_COMUN_FUNC_STATICA natural primos_caca_criba(natural limite,
 		primos_caca_compuesto_encontrado_cb compuesto_cb,
 		primos_caca_divisible_encontrado_cb divisible_encontrado_cb,
 		primos_caca_no_divisible_encontrado_cb no_divisible_encontrado_cb,
-		void *cb_ctx) {
+		void *cb_ctx, primos_datos *pd) {
+	bool *primos_caca_es_primo = pd->primos_caca_es_primo;
+	natural *primos_caca = pd->primos_caca;
 	caca_log_debug("primos asta %u", limite);
 	assert_timeout(limite<=PRIMOS_NUM_MAX);
 	natural i, j;
@@ -557,12 +563,13 @@ CACA_COMUN_FUNC_STATICA natural primos_caca_criba(natural limite,
 	}
 	for (i = 2; i <= limite; i++) {
 		if (primos_caca_es_primo[i]) {
-			primos_caca[primos_caca_tam++] = i;
+			primos_caca[pd->primos_caca_tam++] = i;
 			if (primo_cb) {
-				primo_cb(i, primos_caca_tam - 1, cb_ctx);
+				primo_cb(i, pd->primos_caca_tam - 1, cb_ctx);
 			}
 		}
-		for (j = 0; j < primos_caca_tam && primos_caca[j] * i <= limite; j++) {
+		for (j = 0; j < pd->primos_caca_tam && primos_caca[j] * i <= limite;
+				j++) {
 			primos_caca_es_primo[primos_caca[j] * i] = falso;
 			if (compuesto_cb) {
 				compuesto_cb(primos_caca[j], j, i, cb_ctx);
@@ -580,7 +587,7 @@ CACA_COMUN_FUNC_STATICA natural primos_caca_criba(natural limite,
 		}
 	}
 	caca_log_debug("generados %u primos", primos_caca_tam);
-	return primos_caca_tam;
+	return pd->primos_caca_tam;
 }
 
 #endif
@@ -684,10 +691,11 @@ CACA_COMUN_FUNC_STATICA void bitch_fini(bitch_vector_ctx *bvctx) {
 
 #endif
 
-#define FUNCTION_HDU_MAX_NUM MORBIUS_MAX_MIERDA
+//#define FUNCTION_HDU_MAX_NUM MORBIUS_MAX_MIERDA
+#define FUNCTION_HDU_MAX_NUM ((natural)1E9)
 
-//#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
-#define FUNCTION_HDU_MAX_LINEAR (22)
+#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
+//#define FUNCTION_HDU_MAX_LINEAR (22)
 
 typedef struct function_hdu_data {
 	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
@@ -734,6 +742,7 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	function_hdu_data *d = NULL;
 	morbius_datos *md = NULL;
+	primos_datos *pd = NULL;
 
 	d = calloc(1, sizeof(function_hdu_data));
 	assert_timeout(d);
@@ -743,15 +752,18 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	assert_timeout(md);
 	md->morbius[1] = 1;
 
+	pd = calloc(1, sizeof(primos_datos));
+	assert_timeout(pd);
+
 	primos_caca_criba(FUNCTION_HDU_MAX_LINEAR, morbius_primo_encontrado_cb,
 	NULL, morbius_divisible_encontrado_cb, morbius_no_divisible_encontrado_cb,
-			md);
+			md, pd);
 	for (natural i = 1; i <= FUNCTION_HDU_MAX_LINEAR; i++) {
 		d->sumatoria_morbius[i] = md->morbius[i] + d->sumatoria_morbius[i - 1];
 		bitch_asigna(d->generados, i);
 	}
 
-	for (natural i = FUNCTION_HDU_MAX_NUM; i >= 1; i--) {
+	for (natural i = FUNCTION_HDU_MAX_LINEAR<<1; i >= 1; i--) {
 		entero_largo r = function_hdu_sumatoria_morbius(i, d);
 		caca_log_debug("f[%u]=%lld", i, r);
 		printf("comple %u\n", comple);
