@@ -586,7 +586,7 @@ CACA_COMUN_FUNC_STATICA natural primos_caca_criba(natural limite,
 			}
 		}
 	}
-	caca_log_debug("generados %u primos", primos_caca_tam);
+	caca_log_debug("generados %u primos", pd->primos_caca_tam);
 	return pd->primos_caca_tam;
 }
 
@@ -692,10 +692,11 @@ CACA_COMUN_FUNC_STATICA void bitch_fini(bitch_vector_ctx *bvctx) {
 #endif
 
 //#define FUNCTION_HDU_MAX_NUM MORBIUS_MAX_MIERDA
-#define FUNCTION_HDU_MAX_NUM ((natural)1E9)
+//#define FUNCTION_HDU_MAX_NUM ((natural)1E9)
+#define FUNCTION_HDU_MAX_NUM (101)
 
-#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
-//#define FUNCTION_HDU_MAX_LINEAR (22)
+//#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
+#define FUNCTION_HDU_MAX_LINEAR (22)
 
 typedef struct function_hdu_data {
 	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
@@ -734,8 +735,36 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 				/ function_hdu_funcion_I(1);
 		fhd->sumatoria_morbius[n] = r;
 		bitch_asigna(fhd->generados, n);
-
 	}
+	return r;
+}
+
+CACA_COMUN_FUNC_STATICA entero_largo function_hdu_funcion_g(natural n) {
+	entero_largo nl = n;
+	return nl * nl - 3 * nl + 2;
+}
+
+CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_g(natural n) {
+	entero_largo nl = n;
+	return ((nl * (nl + 1) * (2 * nl + 1)) / 6) - (3 * (((nl * (nl + 1)) / 2)))
+			+ 2 * nl;
+}
+
+CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_morbius(
+		natural n, function_hdu_data *fhd) {
+	entero_largo r = 0;
+	for (natural cd = 2, d, la; cd < n; cd = la + 1) {
+		d = n / cd;
+		la = n / d;
+		r += function_hdu_sumatoria_morbius(d, fhd)
+				* (function_hdu_sumatoria_funcion_g(la)
+						- function_hdu_sumatoria_funcion_g(cd - 1));
+//		r += function_hdu_sumatoria_morbius(d, fhd)
+//				* (function_hdu_sumatoria_funcion_I(la)
+//						- function_hdu_sumatoria_funcion_I(cd - 1));
+		comple++;
+	}
+	r += function_hdu_funcion_g(1) * function_hdu_sumatoria_morbius(n, fhd);
 	return r;
 }
 
@@ -763,13 +792,23 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 		bitch_asigna(d->generados, i);
 	}
 
-	for (natural i = FUNCTION_HDU_MAX_LINEAR<<1; i >= 1; i--) {
-		entero_largo r = function_hdu_sumatoria_morbius(i, d);
+//	for (natural i = FUNCTION_HDU_MAX_LINEAR<<1; i >= 1; i--) {
+//		entero_largo r = function_hdu_sumatoria_morbius(i, d);
+//		caca_log_debug("f[%u]=%lld", i, r);
+//		printf("comple %u\n", comple);
+//	}
+
+	for (natural i = 1; i <= FUNCTION_HDU_MAX_NUM; i++) {
+		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(i,
+				d);
 		caca_log_debug("f[%u]=%lld", i, r);
-		printf("comple %u\n", comple);
+//		printf("comple %u\n", comple);
 	}
 
 	bitch_fini(d->generados);
+	free(d);
+	free(md);
+	free(pd);
 }
 
 int main(void) {
