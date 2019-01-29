@@ -692,11 +692,11 @@ CACA_COMUN_FUNC_STATICA void bitch_fini(bitch_vector_ctx *bvctx) {
 #endif
 
 //#define FUNCTION_HDU_MAX_NUM MORBIUS_MAX_MIERDA
-//#define FUNCTION_HDU_MAX_NUM ((natural)1E9)
-#define FUNCTION_HDU_MAX_NUM (101)
+#define FUNCTION_HDU_MAX_NUM ((natural)1E9)
+//#define FUNCTION_HDU_MAX_NUM (101)
 
-//#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
-#define FUNCTION_HDU_MAX_LINEAR (22)
+#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
+//#define FUNCTION_HDU_MAX_LINEAR (22)
 
 typedef struct function_hdu_data {
 	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
@@ -772,6 +772,7 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	function_hdu_data *d = NULL;
 	morbius_datos *md = NULL;
 	primos_datos *pd = NULL;
+	natural t = 0;
 
 	d = calloc(1, sizeof(function_hdu_data));
 	assert_timeout(d);
@@ -798,11 +799,21 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 //		printf("comple %u\n", comple);
 //	}
 
-	for (natural i = 1; i <= FUNCTION_HDU_MAX_NUM; i++) {
-		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(i,
+//	for (natural i = 1; i <= FUNCTION_HDU_MAX_LINEAR; i++) {
+//		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(i,
+//				d);
+//		caca_log_debug("f[%u]=%lld", i, r);
+//		printf("f[%u]=%lld\n", i, r % (((natural)1e9) + 1));
+//	}
+
+	scanf("%u", &t);
+
+	while (t--) {
+		natural n = 0;
+		scanf("%u", &n);
+		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(n,
 				d);
-		caca_log_debug("f[%u]=%lld", i, r);
-//		printf("comple %u\n", comple);
+		printf("%llu\n", r % ((int) 1E9 + 7));
 	}
 
 	bitch_fini(d->generados);

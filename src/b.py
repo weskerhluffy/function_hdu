@@ -1,7 +1,7 @@
 from eulerlib import Divisors
 from sympy.ntheory import mobius
 
-#N = 101
+# N = 101
 N = int(1e6)
 
 divobj = Divisors(N)
@@ -24,5 +24,5 @@ def convolucion_dirichlet(n):
 r = 0
 for i in range(1, N + 1):
 	r += convolucion_dirichlet(i)
-	print("f[{}]={}".format(i, r))
+	print("f[{}]={}".format(i, r % int(1E9 + 1)))
 
