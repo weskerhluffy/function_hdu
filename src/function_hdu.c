@@ -1144,7 +1144,11 @@ hm_iter hash_map_robin_hood_back_shift_obten(hm_rr_bs_tabla *ht,
 		const void *key, natural key_len, entero_largo *value) {
 	uint64_t num_cubetas = ht->num_buckets_;
 	uint64_t prob_max = ht->probing_max_;
+#ifdef HASH_MAP_HASHEAR
 	uint64_t hash = hash_map_robin_hood_hashear(ht, (void *) key, key_len);
+#else
+	uint64_t hash = (entero_largo_sin_signo) key % num_cubetas;
+#endif
 	uint64_t index_init = hash;
 	uint64_t probe_distance = 0;
 	uint64_t index_current;
@@ -1162,7 +1166,13 @@ hm_iter hash_map_robin_hood_back_shift_obten(hm_rr_bs_tabla *ht,
 		if (i > probe_distance) {
 			break;
 		}
-		if (!memcmp(entrada->llave, key, entrada->llave_tam)) {
+		if (
+#ifdef HASH_MAP_HASHEAR
+		!memcmp(entrada->llave, key, entrada->llave_tam)
+#else
+		entrada->llave == key
+#endif
+				) {
 			*value = entrada->valor;
 			found = verdadero;
 			break;
@@ -1184,7 +1194,11 @@ hm_iter hash_map_robin_hood_back_shift_pon(hm_rr_bs_tabla *ht, const void *key,
 		return HASH_MAP_VALOR_INVALIDO;
 	}
 	ht->num_buckets_used_ += 1;
+#ifdef HASH_MAP_HASHEAR
 	uint64_t hash = hash_map_robin_hood_hashear(ht, (void *) key, key_len);
+#else
+	uint64_t hash = (entero_largo_sin_signo) key % num_cubetas;
+#endif
 	uint64_t index_init = hash;
 	hm_entry *entry = (hm_entry *) calloc(1, sizeof(hm_entry));
 	entry->llave = key;
@@ -1210,7 +1224,13 @@ hm_iter hash_map_robin_hood_back_shift_pon(hm_rr_bs_tabla *ht, const void *key,
 			}
 			break;
 		} else {
-			if (!memcmp(cubeta->entry->llave, key, cubeta->entry->llave_tam)) {
+			if (
+#ifdef HASH_MAP_HASHEAR
+			!memcmp(cubeta->entry->llave, key, cubeta->entry->llave_tam)
+#else
+			cubeta->entry->llave == key
+#endif
+					) {
 				free(entry);
 				*nuevo_entry = falso;
 				break;
@@ -1237,7 +1257,11 @@ int hash_map_robin_hood_back_shift_borra(hm_rr_bs_tabla *ht, const void *key,
 	uint64_t num_cubetas = ht->num_buckets_;
 	uint64_t prob_max = ht->probing_max_;
 	uint64_t prob_min = ht->probing_max_;
+#ifdef HASH_MAP_HASHEAR
 	uint64_t hash = hash_map_robin_hood_hashear(ht, (void *) key, key_len);
+#else
+	uint64_t hash = (entero_largo_sin_signo) key % num_cubetas;
+#endif
 	uint64_t index_init = hash;
 	bool found = falso;
 	uint64_t index_current = 0;
@@ -1252,7 +1276,13 @@ int hash_map_robin_hood_back_shift_borra(hm_rr_bs_tabla *ht, const void *key,
 		if (entrada == NULL || i > probe_distance) {
 			break;
 		}
-		if (!memcmp(entrada->llave, key, entrada->llave_tam)) {
+		if (
+#ifdef HASH_MAP_HASHEAR
+		!memcmp(entrada->llave, key, entrada->llave_tam)
+#else
+		entrada->llave == key
+#endif
+				) {
 			found = verdadero;
 			break;
 		}
@@ -1430,7 +1460,9 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 
 #define hash_map_robin_hood_back_shift_obten_inseguro_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten_inseguro(ht, &(llave), sizeof(llave), &(valor_contenedor))
 
-#define hash_map_robin_hood_back_shift_insertar_nuevo_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_insertar_nuevo(ht,llave,sizeof(*llave), valor_contenedor)
+#define hash_map_robin_hood_back_shift_insertar_nuevo_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_insertar_nuevo(ht,&llave,sizeof(llave), valor_contenedor)
+
+#define hash_map_robin_hood_back_shift_obten_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten(ht, &(llave), sizeof(llave), &(valor_contenedor))
 
 #endif
 
@@ -1442,10 +1474,9 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 //#define FUNCTION_HDU_MAX_LINEAR (22)
 
 typedef struct function_hdu_data {
-//	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
-	hm_rr_bs_tabla *sumatoria_morbius;
-	hm_rr_bs_tabla sumatoria_morbius_storage;
-	bitch_vector_ctx *generados;
+	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
+	hm_rr_bs_tabla *sumatoria_morbius_cache;
+	hm_rr_bs_tabla sumatoria_morbius_cache_storage;
 } function_hdu_data;
 
 CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_morbius_I(
@@ -1461,26 +1492,24 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_I(natural n)
 	return n;
 }
 
-natural comple = 0;
-CACA_COMUN_FUNC_STATICA entero_largo *function_hdu_calloc() {
-	entero_largo *r = NULL;
-	r = calloc(1, sizeof(entero_largo));
-	assert_timeout(r);
-
-	comple++;
-	return r;
-}
 CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 		function_hdu_data *fhd) {
 	entero_largo r = 0;
-	entero_largo nl = 0;
-	if (bitch_checa(fhd->generados, n)) {
-//		r = fhd->sumatoria_morbius[n];
-		nl = n;
-		hash_map_robin_hood_back_shift_obten_inseguro_simple(
-				fhd->sumatoria_morbius, nl, r);
-//		assert_timeout(n < 3 || r);
+	entero_largo nl = n;
+	hm_iter iter = HASH_MAP_VALOR_INVALIDO;
+
+	iter = hash_map_robin_hood_back_shift_obten_simple(
+			fhd->sumatoria_morbius_cache, nl, r);
+
+	if (n <= FUNCTION_HDU_MAX_LINEAR || iter != HASH_MAP_VALOR_INVALIDO) {
+		if (n <= FUNCTION_HDU_MAX_LINEAR) {
+			r = fhd->sumatoria_morbius[n];
+		} else {
+			hash_map_robin_hood_back_shift_obten_inseguro_simple(
+					fhd->sumatoria_morbius_cache, nl, r);
+		}
 	} else {
+//		printf("TMP a\n");
 		for (natural cd = 2, d, la; cd < n; cd = la + 1) {
 			d = n / cd;
 			la = n / d;
@@ -1490,12 +1519,8 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
-//		fhd->sumatoria_morbius[n] = r;
-		entero_largo *np = function_hdu_calloc();
-		*np = n;
 		hash_map_robin_hood_back_shift_insertar_nuevo_simple(
-				fhd->sumatoria_morbius, np, r);
-		bitch_asigna(fhd->generados, n);
+				fhd->sumatoria_morbius_cache, nl, r);
 	}
 	return r;
 }
@@ -1520,9 +1545,6 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_
 		r += function_hdu_sumatoria_morbius(d, fhd)
 				* (function_hdu_sumatoria_funcion_g(la)
 						- function_hdu_sumatoria_funcion_g(cd - 1));
-//		r += function_hdu_sumatoria_morbius(d, fhd)
-//				* (function_hdu_sumatoria_funcion_I(la)
-//						- function_hdu_sumatoria_funcion_I(cd - 1));
 	}
 	r += function_hdu_funcion_g(1) * function_hdu_sumatoria_morbius(n, fhd);
 	return r;
@@ -1536,9 +1558,8 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 
 	d = calloc(1, sizeof(function_hdu_data));
 	assert_timeout(d);
-	d->sumatoria_morbius = &d->sumatoria_morbius_storage;
-	d->generados = bitch_init(FUNCTION_HDU_MAX_NUM + 1);
-	hash_map_robin_hood_back_shift_init(d->sumatoria_morbius,
+	d->sumatoria_morbius_cache = &d->sumatoria_morbius_cache_storage;
+	hash_map_robin_hood_back_shift_init(d->sumatoria_morbius_cache,
 	FUNCTION_HDU_MAX_LINEAR << 4);
 
 	md = calloc(1, sizeof(morbius_datos));
@@ -1552,27 +1573,12 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	NULL, morbius_divisible_encontrado_cb, morbius_no_divisible_encontrado_cb,
 			md, pd);
 
-	entero_largo *ip = function_hdu_calloc();
-	*ip = 0;
-	hash_map_robin_hood_back_shift_insertar_nuevo_simple(d->sumatoria_morbius,
-			ip, 0);
-	for (natural i = 1; i <= 0; i++) {
+	for (natural i = 1; i <= FUNCTION_HDU_MAX_LINEAR; i++) {
 		entero_largo r = 0;
 		entero_largo i_ant = i - 1;
-		entero_largo *ip = function_hdu_calloc();
 
-		hash_map_robin_hood_back_shift_obten_inseguro_simple(
-				d->sumatoria_morbius, i_ant, r);
-//		assert_timeout(i_ant < 3 || r);
-
-//		d->sumatoria_morbius[i] = md->morbius[i] + d->sumatoria_morbius[i - 1];
-		ip = function_hdu_calloc();
-		*ip = i;
+		d->sumatoria_morbius[i] = md->morbius[i] + d->sumatoria_morbius[i - 1];
 		r += md->morbius[i];
-		hash_map_robin_hood_back_shift_insertar_nuevo_simple(
-				d->sumatoria_morbius, ip, r);
-
-		bitch_asigna(d->generados, i);
 	}
 
 //	for (natural i = FUNCTION_HDU_MAX_LINEAR<<1; i >= 1; i--) {
@@ -1585,7 +1591,7 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 //		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(i,
 //				d);
 //		caca_log_debug("f[%u]=%lld", i, r);
-//		printf("f[%u]=%lld\n", i, r % (((natural)1e9) + 1));
+//		printf("f[%u]=%lld\n", i, r % (((natural) 1e9) + 1));
 //	}
 
 	scanf("%u", &t);
@@ -1598,8 +1604,8 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 		printf("%llu\n", r % ((int) 1E9 + 7));
 	}
 
-	hash_map_robin_hood_back_shift_fini(d->sumatoria_morbius);
-	bitch_fini(d->generados);
+//	printf("ddd %llu\n", d->sumatoria_morbius_cache->num_buckets_used_);
+	hash_map_robin_hood_back_shift_fini(d->sumatoria_morbius_cache);
 	free(d);
 	free(md);
 	free(pd);
