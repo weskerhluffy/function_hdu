@@ -1458,11 +1458,11 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 	assert_timeout(iter!=HASH_MAP_VALOR_INVALIDO);
 }
 
-#define hash_map_robin_hood_back_shift_obten_inseguro_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten_inseguro(ht, &(llave), sizeof(llave), &(valor_contenedor))
+#define hash_map_robin_hood_back_shift_obten_inseguro_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten_inseguro(ht, (void*)llave, sizeof(llave), &(valor_contenedor))
 
-#define hash_map_robin_hood_back_shift_insertar_nuevo_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_insertar_nuevo(ht,&llave,sizeof(llave), valor_contenedor)
+#define hash_map_robin_hood_back_shift_insertar_nuevo_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_insertar_nuevo(ht, (void *)llave,sizeof(llave), valor_contenedor)
 
-#define hash_map_robin_hood_back_shift_obten_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten(ht, &(llave), sizeof(llave), &(valor_contenedor))
+#define hash_map_robin_hood_back_shift_obten_simple(ht,llave,valor_contenedor) hash_map_robin_hood_back_shift_obten(ht, (void *)llave, sizeof(llave), &(valor_contenedor))
 
 #endif
 
@@ -1504,12 +1504,14 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 	if (n <= FUNCTION_HDU_MAX_LINEAR || iter != HASH_MAP_VALOR_INVALIDO) {
 		if (n <= FUNCTION_HDU_MAX_LINEAR) {
 			r = fhd->sumatoria_morbius[n];
+//			printf("TMP cacheado linear de %llu = %lld\n", nl, r);
 		} else {
 			hash_map_robin_hood_back_shift_obten_inseguro_simple(
 					fhd->sumatoria_morbius_cache, nl, r);
+//			printf("TMP cacheado de %llu = %lld\n", nl, r);
 		}
 	} else {
-//		printf("TMP a\n");
+//		printf("TMP calculando %llu\n", nl);
 		for (natural cd = 2, d, la; cd < n; cd = la + 1) {
 			d = n / cd;
 			la = n / d;
@@ -1521,6 +1523,7 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 				/ function_hdu_funcion_I(1);
 		hash_map_robin_hood_back_shift_insertar_nuevo_simple(
 				fhd->sumatoria_morbius_cache, nl, r);
+//		printf("TMP calculado %llu r %lld\n", nl, r);
 	}
 	return r;
 }
