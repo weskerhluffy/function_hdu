@@ -1511,13 +1511,16 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 //			printf("TMP cacheado de %llu = %lld\n", nl, r);
 		}
 	} else {
+		r = 0;
 //		printf("TMP calculando %llu\n", nl);
 		for (natural cd = 2, d, la; cd < n; cd = la + 1) {
 			d = n / cd;
 			la = n / d;
+//			printf("r ini %llu\n", r);
 			r += function_hdu_sumatoria_morbius(d, fhd)
 					* (function_hdu_sumatoria_funcion_I(la)
 							- function_hdu_sumatoria_funcion_I(cd - 1));
+//			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u r es %lld\n", nl, d, la, cd - 1, r);
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
@@ -1553,6 +1556,24 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_
 	return r;
 }
 
+CACA_COMUN_FUNC_STATICA void prueba_hash(hm_rr_bs_tabla *ht) {
+	for (natural i = 999999900; i <= FUNCTION_HDU_MAX_NUM; i++) {
+		entero_largo r = 0;
+		hm_iter iter = HASH_MAP_VALOR_INVALIDO;
+
+		iter = hash_map_robin_hood_back_shift_obten_simple(ht, (entero_largo )i,
+				r);
+		assert_timeout(iter==HASH_MAP_VALOR_INVALIDO);
+
+		hash_map_robin_hood_back_shift_insertar_nuevo_simple(ht,
+				(entero_largo )i, i - 107);
+
+		hash_map_robin_hood_back_shift_obten_inseguro_simple(ht,
+				(entero_largo )i, r);
+		assert_timeout(r == (i - 107));
+	}
+}
+
 CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	function_hdu_data *d = NULL;
 	morbius_datos *md = NULL;
@@ -1564,6 +1585,7 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	d->sumatoria_morbius_cache = &d->sumatoria_morbius_cache_storage;
 	hash_map_robin_hood_back_shift_init(d->sumatoria_morbius_cache,
 	FUNCTION_HDU_MAX_LINEAR << 4);
+//	prueba_hash(d->sumatoria_morbius_cache);
 
 	md = calloc(1, sizeof(morbius_datos));
 	assert_timeout(md);
