@@ -102,7 +102,7 @@ typedef enum BOOLEANOS {
 		} \
 		while(0);
 #else
-#define caca_log_debug(formato, args...) 0;
+#define caca_log_debug
 #endif
 
 #define caca_comun_max(x,y) ((x) < (y) ? (y) : (x))
@@ -526,7 +526,8 @@ CACA_COMUN_FUNC_STATICA natural caca_comun_encuentra_divisores(natural n,
 
 #if 1
 
-#define PRIMOS_NUM_MAX ((int)1E6)
+//#define PRIMOS_NUM_MAX ((int)1E6)
+#define PRIMOS_NUM_MAX 1081080
 typedef struct primos_datos {
 	natural primos_caca_tam;
 	natural primos_caca[PRIMOS_NUM_MAX + 1];
@@ -695,8 +696,8 @@ CACA_COMUN_FUNC_STATICA void bitch_fini(bitch_vector_ctx *bvctx) {
 
 #if 1
 
-#define XXH_PUBLIC_API static inline
-#define FORCE_INLINE static inline
+#define XXH_PUBLIC_API CACA_COMUN_FUNC_STATICA
+#define FORCE_INLINE CACA_COMUN_FUNC_STATICA
 #define XXH_FORCE_NATIVE_FORMAT 0
 
 #define XXH_rotl32(x,r) ((x << r) | (x >> (32 - r)))
@@ -1095,7 +1096,7 @@ typedef struct hash_map_robin_hood_back_shift {
 	uint64_t probing_max_;
 } hm_rr_bs_tabla;
 
-static inline entero_largo_sin_signo hash_map_robin_hood_hashear(
+CACA_COMUN_FUNC_STATICA entero_largo_sin_signo hash_map_robin_hood_hashear(
 		hm_rr_bs_tabla *ht, byteme *mierda, natural mierda_tam) {
 	entero_largo_sin_signo ass = 0;
 
@@ -1125,7 +1126,7 @@ int hash_map_robin_hood_back_shift_fini(hm_rr_bs_tabla *ht) {
 	}
 	return 0;
 }
-static inline int hash_map_robin_hood_back_shift_llena_distancia_a_indice_inicio(
+CACA_COMUN_FUNC_STATICA int hash_map_robin_hood_back_shift_llena_distancia_a_indice_inicio(
 		hm_rr_bs_tabla *ht, uint64_t index_stored, uint64_t *distance) {
 	hm_cubeta cubeta = ht->buckets_[index_stored];
 	*distance = 0;
@@ -1349,7 +1350,7 @@ int hash_map_robin_hood_back_shift_borra(hm_rr_bs_tabla *ht, const void *key,
 	}
 	return 1;
 }
-static inline void hash_map_robin_hood_back_shift_indice_pon_valor(
+CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_indice_pon_valor(
 		hm_rr_bs_tabla *ht, hm_iter indice, entero_largo valor) {
 	assert_timeout(indice <= ht->probing_max_ && indice >= ht->probing_min_);
 	hm_entry *entrada = ht->buckets_[indice].entry;
@@ -1470,11 +1471,12 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 #define FUNCTION_HDU_MAX_NUM ((natural)1E9)
 //#define FUNCTION_HDU_MAX_NUM (101)
 
-#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
+#define FUNCTION_HDU_MAX_LINEAR PRIMOS_NUM_MAX
+//#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
 //#define FUNCTION_HDU_MAX_LINEAR (22)
 
 typedef struct function_hdu_data {
-	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_NUM + 1];
+	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_LINEAR + 1];
 	hm_rr_bs_tabla *sumatoria_morbius_cache;
 	hm_rr_bs_tabla sumatoria_morbius_cache_storage;
 } function_hdu_data;
@@ -1584,7 +1586,7 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 	assert_timeout(d);
 	d->sumatoria_morbius_cache = &d->sumatoria_morbius_cache_storage;
 	hash_map_robin_hood_back_shift_init(d->sumatoria_morbius_cache,
-	FUNCTION_HDU_MAX_LINEAR << 4);
+	FUNCTION_HDU_MAX_LINEAR << 1);
 //	prueba_hash(d->sumatoria_morbius_cache);
 
 	md = calloc(1, sizeof(morbius_datos));
@@ -1616,7 +1618,7 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 //		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(i,
 //				d);
 //		caca_log_debug("f[%u]=%lld", i, r);
-//		printf("f[%u]=%lld\n", i, r % (((natural) 1e9) + 1));
+//		printf("f[%u]=%lld\n", i, r % (((natural) 1e9) + 7));
 //	}
 
 	scanf("%u", &t);
@@ -1626,10 +1628,10 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 		scanf("%u", &n);
 		entero_largo r = function_hdu_sumatoria_convolucion_funcion_morbius(n,
 				d);
-		printf("%llu\n", r % ((int) 1E9 + 7));
+		printf("%llu\n", r % ((natural) 1E9 + 7));
 	}
 
-//	printf("ddd %llu\n", d->sumatoria_morbius_cache->num_buckets_used_);
+//	printf("TMP %llu\n", d->sumatoria_morbius_cache->num_buckets_used_);
 	hash_map_robin_hood_back_shift_fini(d->sumatoria_morbius_cache);
 	free(d);
 	free(md);
