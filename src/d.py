@@ -2,7 +2,8 @@ from eulerlib import Divisors
 from sympy.ntheory import mobius
 
 # N = 101
-N = 1081080
+#N = 1081080
+N = 2000000
 
 divobj = Divisors(N)
 
@@ -17,7 +18,7 @@ def convolucion_dirichlet(n):
 #     print("divis {}".format(divis))
     for d in divis[:]:
         r += funcion(d) * mobius(n // d)
-#     print("d {} f(d) {} cd {} morbiys {} es {}".format(d, funcion(d), n // d, mobius(n // d), r))
+#        print("d {} f(d) {} cd {} morbiys {} es {}".format(d, funcion(d), n // d, mobius(n // d), r))
     return int(r)
 
 

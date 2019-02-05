@@ -342,8 +342,7 @@ CACA_COMUN_FUNC_STATICA int caca_comun_lee_matrix_long_stdin(tipo_dato *matrix,
 			num_columnas[indice_filas] = indice_columnas;
 		}
 		indice_filas++;
-		caca_log_debug("las filas son %d, con clos %d", indice_filas,
-				indice_columnas);
+		caca_log_debug("las filas son %d, con clos %d", indice_filas, indice_columnas);
 	}
 
 	*num_filas = indice_filas;
@@ -605,16 +604,16 @@ void morbius_divisible_encontrado_cb(natural primo, natural idx_primo,
 	morbius_datos *g = cb_ctx;
 
 	g->morbius[compuesto * primo] = 0;
-	caca_log_debug("divisible %u %d", compuesto*primo,
-			g->morbius[compuesto*primo]);
+	caca_log_debug("divisible %u %d", compuesto * primo, g->morbius[compuesto
+			* primo]);
 }
 void morbius_no_divisible_encontrado_cb(natural primo, natural idx_primo,
 		natural compuesto, void *cb_ctx) {
 	morbius_datos *g = cb_ctx;
 
 	g->morbius[compuesto * primo] = g->morbius[compuesto] * -1;
-	caca_log_debug("indivisible %u de %u %d", compuesto*primo, compuesto,
-			g->morbius[compuesto*primo]);
+	caca_log_debug("indivisible %u de %u %d", compuesto * primo, compuesto, g->morbius[compuesto
+			* primo]);
 }
 
 void morbius_primo_encontrado_cb(natural primo, natural idx_primo, void *cb_ctx) {
@@ -1101,7 +1100,7 @@ CACA_COMUN_FUNC_STATICA entero_largo_sin_signo hash_map_robin_hood_hashear(
 	entero_largo_sin_signo ass = 0;
 
 	ass = XXH64(mierda, mierda_tam, ass) % ht->num_buckets_;
-	caca_log_debug("%u mapea a %u", *(natural *)mierda, ass);
+	caca_log_debug("%u mapea a %u", *(natural *) mierda, ass);
 	return ass;
 }
 
@@ -1506,11 +1505,11 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 	if (n <= FUNCTION_HDU_MAX_LINEAR || iter != HASH_MAP_VALOR_INVALIDO) {
 		if (n <= FUNCTION_HDU_MAX_LINEAR) {
 			r = fhd->sumatoria_morbius[n];
-//			printf("TMP cacheado linear de %llu = %lld\n", nl, r);
+			printf("TMP cacheado linear de %llu = %lld\n", nl, r);
 		} else {
 			hash_map_robin_hood_back_shift_obten_inseguro_simple(
 					fhd->sumatoria_morbius_cache, nl, r);
-//			printf("TMP cacheado de %llu = %lld\n", nl, r);
+			printf("TMP cacheado de %llu = %lld\n", nl, r);
 		}
 	} else {
 		r = 0;
@@ -1518,11 +1517,13 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 		for (natural cd = 2, d, la; cd < n; cd = la + 1) {
 			d = n / cd;
 			la = n / d;
-//			printf("r ini %llu\n", r);
+//			printf("TMP r ini %llu\n", r);
 			r += function_hdu_sumatoria_morbius(d, fhd)
 					* (function_hdu_sumatoria_funcion_I(la)
 							- function_hdu_sumatoria_funcion_I(cd - 1));
-//			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u r es %lld\n", nl, d, la, cd - 1, r);
+//			printf("TMP d %u sm %lld\n", d, function_hdu_sumatoria_morbius(d, fhd));
+			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u r es %lld\n", nl, d,
+					la, cd - 1, r);
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
@@ -1553,6 +1554,11 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_
 		r += function_hdu_sumatoria_morbius(d, fhd)
 				* (function_hdu_sumatoria_funcion_g(la)
 						- function_hdu_sumatoria_funcion_g(cd - 1));
+		printf("TMP para %u suma mor %lld\n", d,
+				function_hdu_sumatoria_morbius(d, fhd));
+		printf("TMP d %u la %u sg %lld (cd-1) %u sg %llu rere %lld\n", d, la,
+				function_hdu_sumatoria_funcion_g(la), cd - 1,
+				function_hdu_sumatoria_funcion_g(cd - 1), r);
 	}
 	r += function_hdu_funcion_g(1) * function_hdu_sumatoria_morbius(n, fhd);
 	return r;
