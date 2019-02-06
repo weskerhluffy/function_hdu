@@ -57,3 +57,5 @@ src/:q
 src/function_hdu_ref
 src/function_hd
 src/shame
+src/resut.txt
+*.swp

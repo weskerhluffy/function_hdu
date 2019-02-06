@@ -1474,6 +1474,8 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 //#define FUNCTION_HDU_MAX_LINEAR ((natural)1E6)
 //#define FUNCTION_HDU_MAX_LINEAR (22)
 
+#define FUNCTION_HDU_MOD ((natural)(1E9+7))
+
 typedef struct function_hdu_data {
 	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_LINEAR + 1];
 	hm_rr_bs_tabla *sumatoria_morbius_cache;
@@ -1522,14 +1524,14 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 					* (function_hdu_sumatoria_funcion_I(la)
 							- function_hdu_sumatoria_funcion_I(cd - 1));
 //			printf("TMP d %u sm %lld\n", d, function_hdu_sumatoria_morbius(d, fhd));
-			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u r es %lld\n", nl, d,
-					la, cd - 1, r);
+			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u morbius %lld r es %lld\n", nl, d,
+					la, cd - 1, function_hdu_sumatoria_morbius(d, fhd), r);
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
 		hash_map_robin_hood_back_shift_insertar_nuevo_simple(
 				fhd->sumatoria_morbius_cache, nl, r);
-//		printf("TMP calculado %llu r %lld\n", nl, r);
+		printf("TMP calculado %llu r %lld\n", nl, r);
 	}
 	return r;
 }
