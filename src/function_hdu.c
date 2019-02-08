@@ -9,6 +9,8 @@
  */
 
 // XXX: http://acm.hdu.edu.cn/showproblem.php?pid=5608
+// XXX: https://www.quora.com/profile/Surya-Kiran/Posts/A-Dance-with-Mobius-Function
+// XXX: http://codeforces.com/blog/entry/54150#comment-484773
 #if 1
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -1508,11 +1510,11 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 	if (n <= FUNCTION_HDU_MAX_LINEAR || iter != HASH_MAP_VALOR_INVALIDO) {
 		if (n <= FUNCTION_HDU_MAX_LINEAR) {
 			r = fhd->sumatoria_morbius[n];
-			printf("TMP cacheado linear de %llu = %lld\n", nl, r);
+//			printf("TMP cacheado linear de %llu = %lld\n", nl, r);
 		} else {
 			hash_map_robin_hood_back_shift_obten_inseguro_simple(
 					fhd->sumatoria_morbius_cache, nl, r);
-			printf("TMP cacheado de %llu = %lld\n", nl, r);
+//			printf("TMP cacheado de %llu = %lld\n", nl, r);
 		}
 	} else {
 		r = 0;
@@ -1525,16 +1527,13 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 					* (function_hdu_sumatoria_funcion_I(la)
 							- function_hdu_sumatoria_funcion_I(cd - 1));
 //			printf("TMP d %u sm %lld\n", d, function_hdu_sumatoria_morbius(d, fhd));
-			printf(
-					"TMP para %llu, en d:%u,la:%u,(cd-1):%u morbius %lld r es %lld\n",
-					nl, d, la, cd - 1, function_hdu_sumatoria_morbius(d, fhd),
-					r);
+//			printf( "TMP para %llu, en d:%u,la:%u,(cd-1):%u morbius %lld r es %lld\n", nl, d, la, cd - 1, function_hdu_sumatoria_morbius(d, fhd), r);
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
 		hash_map_robin_hood_back_shift_insertar_nuevo_simple(
 				fhd->sumatoria_morbius_cache, nl, r);
-		printf("TMP calculado %llu r %lld\n", nl, r);
+//		printf("TMP calculado %llu r %lld\n", nl, r);
 	}
 	return r;
 }
@@ -1551,8 +1550,7 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_g(natural n)
 	entero_largo factor1_3 = 2 * nl + 1;
 	entero_largo factor2_1 = nl;
 	entero_largo factor2_2 = nl + 1;
-	printf("TMPH factoa %llu %llu %llu %llu %llu\n", factor1_1, factor1_2,
-			factor1_3, factor2_1, factor2_2);
+//	printf("TMPH factoa %llu %llu %llu %llu %llu\n", factor1_1, factor1_2, factor1_3, factor2_1, factor2_2);
 	if (!(factor1_1 % 3)) {
 		factor1_1 /= 3;
 	} else {
@@ -1570,13 +1568,8 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_g(natural n)
 		factor1_2 >>= 1;
 		factor2_2 >>= 1;
 	}
-	printf("TMPH factod %llu %llu %llu %llu %llu\n", factor1_1, factor1_2,
-			factor1_3, factor2_1, factor2_2);
-	printf("TMPH fa 1 %llu fa 2 %llu fa3 %llu\n",
-			(((((factor1_1 % MOD) * (factor1_2 % MOD)) % MOD)
-					* (factor1_3 % MOD)) % MOD),
-			(3 * (((factor2_1 % MOD) * (factor2_2 % MOD)) % MOD)) % MOD,
-			(2 * (nl % MOD)) % MOD);
+//	printf("TMPH factod %llu %llu %llu %llu %llu\n", factor1_1, factor1_2, factor1_3, factor2_1, factor2_2);
+//	printf("TMPH fa 1 %llu fa 2 %llu fa3 %llu\n", (((((factor1_1 % MOD) * (factor1_2 % MOD)) % MOD) * (factor1_3 % MOD)) % MOD), (3 * (((factor2_1 % MOD) * (factor2_2 % MOD)) % MOD)) % MOD, (2 * (nl % MOD)) % MOD );
 
 	entero_largo r = ((((((factor1_1 % MOD) * (factor1_2 % MOD)) % MOD)
 			* (factor1_3 % MOD)) % MOD)
@@ -1597,11 +1590,8 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_
 		entero_largo producto = (function_hdu_sumatoria_morbius(d, fhd)
 				* sumatorias_funcion_g + MOD) % MOD;
 		r = (r + producto + MOD) % MOD;
-		printf("TMP para %u suma mor %lld\n", d,
-				function_hdu_sumatoria_morbius(d, fhd));
-		printf("TMP d %u la %u sg %lld (cd-1) %u sg %llu rere %lld\n", d, la,
-				function_hdu_sumatoria_funcion_g(la), cd - 1,
-				function_hdu_sumatoria_funcion_g(cd - 1), r);
+//		printf("TMP para %u suma mor %lld\n", d, function_hdu_sumatoria_morbius(d, fhd));
+//		printf("TMP d %u la %u sg %lld (cd-1) %u sg %llu rere %lld\n", d, la, function_hdu_sumatoria_funcion_g(la), cd - 1, function_hdu_sumatoria_funcion_g(cd - 1), r);
 	}
 	r =
 			((r
