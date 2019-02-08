@@ -1582,7 +1582,8 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_g(natural n)
 			* (factor1_3 % MOD)) % MOD)
 			- (3 * (((factor2_1 % MOD) * (factor2_2 % MOD)) % MOD)) % MOD
 			+ (2 * (nl % MOD)) % MOD) % MOD;
-	return r < 0 ? MOD + r : r;
+	// XXX: https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
+	return (r + MOD) % MOD;
 }
 
 CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_morbius(
@@ -1591,16 +1592,22 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_
 	for (natural cd = 2, d, la; cd < n; cd = la + 1) {
 		d = n / cd;
 		la = n / d;
-		r += function_hdu_sumatoria_morbius(d, fhd)
-				* (function_hdu_sumatoria_funcion_g(la)
-						- function_hdu_sumatoria_funcion_g(cd - 1));
+		entero_largo sumatorias_funcion_g = (function_hdu_sumatoria_funcion_g(
+				la) - function_hdu_sumatoria_funcion_g(cd - 1) + MOD) % MOD;
+		entero_largo producto = (function_hdu_sumatoria_morbius(d, fhd)
+				* sumatorias_funcion_g + MOD) % MOD;
+		r = (r + producto + MOD) % MOD;
 		printf("TMP para %u suma mor %lld\n", d,
 				function_hdu_sumatoria_morbius(d, fhd));
 		printf("TMP d %u la %u sg %lld (cd-1) %u sg %llu rere %lld\n", d, la,
 				function_hdu_sumatoria_funcion_g(la), cd - 1,
 				function_hdu_sumatoria_funcion_g(cd - 1), r);
 	}
-	r += function_hdu_funcion_g(1) * function_hdu_sumatoria_morbius(n, fhd);
+	r =
+			((r
+					+ (function_hdu_funcion_g(1)
+							* function_hdu_sumatoria_morbius(n, fhd) + MOD)
+							% MOD) + MOD) % MOD;
 	return r;
 }
 
@@ -1647,11 +1654,9 @@ CACA_COMUN_FUNC_STATICA void function_hdu_main() {
 			md, pd);
 
 	for (natural i = 1; i <= FUNCTION_HDU_MAX_LINEAR; i++) {
-		entero_largo r = 0;
 		entero_largo i_ant = i - 1;
 
 		d->sumatoria_morbius[i] = md->morbius[i] + d->sumatoria_morbius[i - 1];
-		r += md->morbius[i];
 	}
 
 //	for (natural i = FUNCTION_HDU_MAX_LINEAR<<1; i >= 1; i--) {
