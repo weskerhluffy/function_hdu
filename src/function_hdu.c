@@ -1475,6 +1475,7 @@ CACA_COMUN_FUNC_STATICA void hash_map_robin_hood_back_shift_obten_inseguro(
 //#define FUNCTION_HDU_MAX_LINEAR (22)
 
 #define FUNCTION_HDU_MOD ((natural)(1E9+7))
+#define MOD FUNCTION_HDU_MOD
 
 typedef struct function_hdu_data {
 	entero_largo sumatoria_morbius[FUNCTION_HDU_MAX_LINEAR + 1];
@@ -1524,8 +1525,10 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_morbius(natural n,
 					* (function_hdu_sumatoria_funcion_I(la)
 							- function_hdu_sumatoria_funcion_I(cd - 1));
 //			printf("TMP d %u sm %lld\n", d, function_hdu_sumatoria_morbius(d, fhd));
-			printf("TMP para %llu, en d:%u,la:%u,(cd-1):%u morbius %lld r es %lld\n", nl, d,
-					la, cd - 1, function_hdu_sumatoria_morbius(d, fhd), r);
+			printf(
+					"TMP para %llu, en d:%u,la:%u,(cd-1):%u morbius %lld r es %lld\n",
+					nl, d, la, cd - 1, function_hdu_sumatoria_morbius(d, fhd),
+					r);
 		}
 		r = (function_hdu_sumatoria_convolucion_morbius_I(n) - r)
 				/ function_hdu_funcion_I(1);
@@ -1543,8 +1546,43 @@ CACA_COMUN_FUNC_STATICA entero_largo function_hdu_funcion_g(natural n) {
 
 CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_funcion_g(natural n) {
 	entero_largo nl = n;
-	return ((nl * (nl + 1) * (2 * nl + 1)) / 6) - (3 * (((nl * (nl + 1)) / 2)))
-			+ 2 * nl;
+	entero_largo factor1_1 = nl;
+	entero_largo factor1_2 = nl + 1;
+	entero_largo factor1_3 = 2 * nl + 1;
+	entero_largo factor2_1 = nl;
+	entero_largo factor2_2 = nl + 1;
+	printf("TMPH factoa %llu %llu %llu %llu %llu\n", factor1_1, factor1_2,
+			factor1_3, factor2_1, factor2_2);
+	if (!(factor1_1 % 3)) {
+		factor1_1 /= 3;
+	} else {
+		if (!(factor1_2 % 3)) {
+			factor1_2 /= 3;
+		} else {
+			factor1_3 /= 3;
+		}
+	}
+
+	if (!(factor1_1 & 1)) {
+		factor1_1 >>= 1;
+		factor2_1 >>= 1;
+	} else {
+		factor1_2 >>= 1;
+		factor2_2 >>= 1;
+	}
+	printf("TMPH factod %llu %llu %llu %llu %llu\n", factor1_1, factor1_2,
+			factor1_3, factor2_1, factor2_2);
+	printf("TMPH fa 1 %llu fa 2 %llu fa3 %llu\n",
+			(((((factor1_1 % MOD) * (factor1_2 % MOD)) % MOD)
+					* (factor1_3 % MOD)) % MOD),
+			(3 * (((factor2_1 % MOD) * (factor2_2 % MOD)) % MOD)) % MOD,
+			(2 * (nl % MOD)) % MOD);
+
+	entero_largo r = ((((((factor1_1 % MOD) * (factor1_2 % MOD)) % MOD)
+			* (factor1_3 % MOD)) % MOD)
+			- (3 * (((factor2_1 % MOD) * (factor2_2 % MOD)) % MOD)) % MOD
+			+ (2 * (nl % MOD)) % MOD) % MOD;
+	return r < 0 ? MOD + r : r;
 }
 
 CACA_COMUN_FUNC_STATICA entero_largo function_hdu_sumatoria_convolucion_funcion_morbius(
